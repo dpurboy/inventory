@@ -3,6 +3,7 @@
 namespace App\Actions\Fortify;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -21,6 +22,10 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
+            'no_telp' => ['required', 'digits_between:6,13'],
+            'alamat' => ['required', 'string'],
+            'pekerjaan' => ['required', 'string'],
+            'tanggal_lahir' => ['required'],
         ])->validateWithBag('updateProfileInformation');
 
         if (isset($input['photo'])) {
@@ -34,6 +39,10 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->forceFill([
                 'name' => $input['name'],
                 'email' => $input['email'],
+                'no_telp' => $input['no_telp'],
+                'alamat' => $input['alamat'],
+                'pekerjaan' => $input['pekerjaan'],
+                'tanggal_lahir' => $input['tanggal_lahir'],
             ])->save();
         }
     }
@@ -49,6 +58,10 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'name' => $input['name'],
             'email' => $input['email'],
             'email_verified_at' => null,
+            'no_telp' => $input['no_telp'],
+            'alamat' => $input['alamat'],
+            'pekerjaan' => $input['pekerjaan'],
+            'tanggal_lahir' => $input['tanggal_lahir'],
         ])->save();
 
         $user->sendEmailVerificationNotification();

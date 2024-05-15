@@ -81,6 +81,39 @@
                 @endif
             @endif
         </div>
+
+        <!-- Tanggal Lahir -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="tanggal_lahir" value="{{ __('Tanggal Lahir') }}" />
+            <x-input id="tanggal_lahir" type="date" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full" wire:model="state.tanggal_lahir" required autocomplete="2000-12-30" min="1950-01-02" />
+            <x-input-error for="tanggal_lahir" class="mt-2" />
+        </div>
+
+        <!-- No Telp -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="no_telp" value="{{ __('Nomor Telephon') }}" />
+            <x-input id="no_telp" type="number" class="mt-1 block w-full" wire:model="state.no_telp" required autocomplete="no_telp" />
+            <x-input-error for="no_telp" class="mt-2" />
+        </div>
+
+        <!-- Alamat -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="alamat" value="{{ __('Alamat') }}" />
+            <textarea id="alamat" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full" wire:model="state.alamat" required autocomplete="alamat" row="3"></textarea>
+            <x-input-error for="alamat" class="mt-2" />
+        </div>
+
+        <!-- Pekerjaan -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="pekerjaan" value="{{ __('Pekerjaan') }}" />
+            <select id="pekerjaan" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full" wire:model="state.pekerjaan" required autocomplete="pekerjaan" >
+                <option value="">Pilih Pekerjaan</option>
+                <option value="asn">ASN</option>
+                <option value="swasta">Swasta</option>
+                <option value="lainnya">Lainnya</option>
+            </select>
+            <x-input-error for="pekerjaan" class="mt-2" />
+        </div>
     </x-slot>
 
     <x-slot name="actions">
