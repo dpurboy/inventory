@@ -91,6 +91,7 @@
                             </div>
                             <button type="submit" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Tambah</button>
                         </form>
+                        <p class="p-5 text-sm text-gray-500">* Kode barang akan tersimpan otomatis dengan format "Kategori/nama barang/tanggal dan timstamp".</p>
                     @endif
                 </div>
                 
