@@ -84,7 +84,7 @@
 
         <!-- Tanggal Lahir -->
         <div class="col-span-6 sm:col-span-4">
-            <x-label for="tanggal_lahir" value="{{ __('Tanggal Lahir') }}" />
+            <x-label for="tanggal_lahir" value="{{ __('Tanggal Lahir (mm/dd/yyyy)') }}" />
             <x-input id="tanggal_lahir" type="date" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full" wire:model="state.tanggal_lahir" required autocomplete="2000-12-30" min="1950-01-02" />
             <x-input-error for="tanggal_lahir" class="mt-2" />
         </div>
