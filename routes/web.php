@@ -42,8 +42,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('inventaris/barang', BarangController::class);
 
     Route::resource('inventaris/detail_barang', DetailBarangController::class);
-
-    Route::get('chat', [ChatController::class, 'index'])->name('chat');
 });
 
 
