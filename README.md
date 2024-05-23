@@ -41,5 +41,15 @@ Salin file .env.example menjadi .env dan sesuaikan konfigurasi database dan lain
 ### 4. Jalankan Migrasi
 ### 5. Jalankan Seeder
 
+
+
 ## Baca Referensi 
 <a href="https://laravel.com/docs/10.x/">Dokumentasi Laravel</a>
+
+## Demo
+link <a href="https://dpurboy.serv00.net/">di sini</a>
+Login
+Email : user1@example.com
+Password : password
+
+Atau bisa registrasi dan dapatkan verifikasi melalui email.
